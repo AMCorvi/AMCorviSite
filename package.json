@@ -1,0 +1,12 @@
+{
+  "name": "amcorvi_site",
+  "version": "0.0.1",
+  "main": "mainsite/templates/mainsite/index.html",
+  "author": "AMCorvi <amcorvi@icloud.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8"
+  }
+}
