@@ -25,7 +25,7 @@ SECRET_KEY = '=&g4()pu!$z@@b6cy1xmtck1@td1!_p(8w1s3r1v==t##n$48('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['corvi.dev']
 
 
 # Application definition
@@ -52,6 +52,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'amcorvi_site.urls'
+ROOT_HOSTCONF = 'amcorvi_site.hosts'
+DEFAULT_HOST = 'www'
 
 TEMPLATES = [
     {
