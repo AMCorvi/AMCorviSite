@@ -25,8 +25,12 @@ SECRET_KEY = '=&g4()pu!$z@@b6cy1xmtck1@td1!_p(8w1s3r1v==t##n$48('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['corvi.dev',
-                 'blog.corvi.dev' ]
+ALLOWED_HOSTS = ['localhost',
+                 '127.0.0.1',
+                 'corvi.dev',
+                 'blog.corvi.dev',
+                 'projects.corvi.dev',
+                 ]
 
 
 # Application definition

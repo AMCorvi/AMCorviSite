@@ -9,6 +9,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="{% static 'blog/styles/main.css'%}" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.4/showdown.min.js"></script>
+
 	</head>
 	<body>
 
@@ -52,7 +54,7 @@
                                     <h2><a href="{{blog.pk}}">{{ blog.post_title }}</a></h2>
                                     <p class="info">{{blog.date_create|timesince}} <a href="{{blog.pk}}">{{blog.author}}</a></p>
 		        				</header>
-                                <p>{{ blog.post_content|truncatewords:"40" }}</p>
+                                <p id="post_content"> {{ blog.post_content|linebreaks|truncatewords:"40"}}</p>
 		        				<ul class="actions">
                                     <li><a href="{{blog.pk}}" class="button alt">Read More</a></li>
 		        				</ul>
@@ -87,6 +89,17 @@
             <script src="{% static 'blog/js/skel.min.js'%}"></script>
             <script src="{% static 'blog/js/util.js'%}"></script>
             <script src="{% static 'blog/js/main.js'%}"></script>
-
+            <script>
+                $(document).ready(function(){
+                   var postContent  = document.getElementById('post_content');
+                   var converter = new showdown.Converter(),
+                       text      = postContent.innerHTML,
+                       html      = converter.makeHtml(text);
+                   postContent.innerHTML = html;
+                       
+                })
+                        
+                
+            </script>
 	</body>
 </html>

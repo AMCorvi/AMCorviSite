@@ -21,7 +21,7 @@ from mainsite.views import  index, about, Project_List_View
 urlpatterns = [
     url(r'^$', index, name="index"),
     url(r'^admin/', admin.site.urls),
-    url(r'^portfolio/$', Project_List_View.as_view(), name="portfolio"),
+    url(r'^projects/$', Project_List_View.as_view(), name="projects"),
     url(r'^about/$', about, name='view'),
     url(r'^blog/', include('blog.urls'))
 ]

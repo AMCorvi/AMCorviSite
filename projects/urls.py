@@ -19,9 +19,9 @@ from projects import views
 urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^d3$', views.d3, name="d3"),
-#    url(r'^$', views.on_the_scene, name="on_the_scene"),
-#    url(r'^$', views.yeller, name="yeller"),
-#    url(r'^$', views.node_talk, name="node_talk"),
-#    url(r'^$', views.communion, name="communion"),
-#    url(r'^$', views.blog, name="blog")
+#    url(r'^ots$', views.on_the_scene, name="on_the_scene"),
+#    url(r'^$yeller$', views.yeller, name="yeller"),
+#    url(r'^nodetalk$', views.node_talk, name="node_talk"),
+#    url(r'^communion$', views.communion, name="communion"),
+#    url(r'^blog$', views.blog, name="blog")
 ]
