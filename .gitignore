@@ -1,3 +1,3 @@
 ./amcorvi_site/settings.py
 
-./node_modules/
+node_modules/
