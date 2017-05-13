@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['localhost',
                  'corvi.dev',
                  'blog.corvi.dev',
                  'projects.corvi.dev',
-                 ]
+                ]
 
 
 # Application definition
@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE =  'America/New_York'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
