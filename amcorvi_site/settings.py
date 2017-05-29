@@ -86,10 +86,21 @@ WSGI_APPLICATION = 'amcorvi_site.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+# PostgresSQL configuration
+     "default": {
+         "ENGINE": "django.db.backends.postgresql_psycopg2",
+         "NAME": "AMC",
+         "USER": "AMC",
+         "PASSWORD": "",
+         "HOST": "localhost",
+         "PORT": "",
+     }
+
+#  SQLite configuration
+    #  'default': {
+    #      'ENGINE': 'django.db.backends.sqlite3',
+    #      'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #  }
 }
 
 
