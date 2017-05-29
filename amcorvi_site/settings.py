@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['localhost',
                  'corvi.dev',
                  'blog.corvi.dev',
                  'projects.corvi.dev',
+                 '*' # TODO: Remove in production
                 ]
 
 
@@ -86,15 +87,25 @@ WSGI_APPLICATION = 'amcorvi_site.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-# PostgresSQL configuration
+# PostgresSQL Docker configuration
      "default": {
          "ENGINE": "django.db.backends.postgresql_psycopg2",
-         "NAME": "AMC",
-         "USER": "AMC",
-         "PASSWORD": "",
-         "HOST": "localhost",
-         "PORT": "",
+         "NAME": "postgres",
+         "USER": "postgres",
+         #  "PASSWORD": "",
+         "HOST": "db",
+         "PORT": "5432",
      }
+
+# PostgresSQL local development configuration
+     #  "default": {
+     #      "ENGINE": "django.db.backends.postgresql_psycopg2",
+     #      "NAME": "AMC",
+     #      "USER": "AMC",
+     #      "PASSWORD": "",
+     #      "HOST": "localhost",
+     #      "PORT": "",
+     #  }
 
 #  SQLite configuration
     #  'default': {
