@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost',
                  '127.0.0.1',
-                 'corvi.dev',
                  'blog.corvi.dev',
                  'projects.corvi.dev',
                  '*' # TODO: Remove in production
@@ -87,15 +86,25 @@ WSGI_APPLICATION = 'amcorvi_site.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
+# Google Database Configuration
+
+     #  'default': {
+     #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+     #         'HOST': '/cloudsql/<your-cloudsql-connection-string>',
+     #         'NAME': 'postgres',
+     #         'USER': 'postgres',
+     #         'PASSWORD': 'superomniaamanT*8',
+     #  }
+
 # PostgresSQL Docker configuration
-     "default": {
-         "ENGINE": "django.db.backends.postgresql_psycopg2",
-         "NAME": "postgres",
-         "USER": "postgres",
-         #  "PASSWORD": "",
-         "HOST": "db",
-         "PORT": "5432",
-     }
+     #  "default": {
+     #      "ENGINE": "django.db.backends.postgresql_psycopg2",
+     #      "NAME": "postgres",
+     #      "USER": "postgres",
+     #      #  "PASSWORD": "superomniaamanT*8",
+     #      "HOST": "",
+     #      "PORT": "5432",
+     #  }
 
 # PostgresSQL local development configuration
      #  "default": {
@@ -108,10 +117,10 @@ DATABASES = {
      #  }
 
 #  SQLite configuration
-    #  'default': {
-    #      'ENGINE': 'django.db.backends.sqlite3',
-    #      'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #  }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 

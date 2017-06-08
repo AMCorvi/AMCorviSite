@@ -164,6 +164,11 @@
 		font-size: 2em;
 	}
 
+    h1#sectionTitle {
+        text-align: center;
+        text-decoration: underline ;
+    }
+
 	h2 {
 		font-size: 1.75em;
 	}
@@ -1287,7 +1292,7 @@
 		-ms-flex-direction: column;
 		flex-direction: column;
 		padding: 8em 0 6em 0;
-		background-image: url("./images/header.jpg");
+		background-image: url("");
 		background-size: cover;
 		background-position: center;
 		background-attachment: fixed;
@@ -1550,3 +1555,4 @@
 				}
 
 		}
+
