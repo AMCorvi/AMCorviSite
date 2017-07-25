@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="{% static 'blog/styles/main.css'%}" />
         <!-- I know... I know but Sometimes you want to have scripts before you  'body' markdown  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.4/showdown.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.1/showdown.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
 	</head>
 	<body>
@@ -39,7 +39,7 @@
 
             <!-- Banner -->
             <div class="blogbanner">
-            
+
 					<div class="image full">
                         <img align="middle" src="" alt="" />
 					</div>
@@ -82,10 +82,11 @@
             <script src="{% static 'blog/js/skel.min.js'%}"></script>
             <script src="{% static 'blog/js/util.js'%}"></script>
             <script src="{% static 'blog/js/main.js'%}"></script>
-            <script> 
+            <script src="{% static 'blog/js/showdown-htmlescape.min.js'%}"></script>
+            <script>
                 $(document).ready(function(){
                    var postContent = document.getElementById('post_content');
-                   var converter = new showdown.Converter(),
+                   var converter = new showdown.Converter({extensions: ['htmlescape']});
                        text      = postContent.innerHTML,
                        html      = converter.makeHtml(text);
                    postContent.innerHTML = html;

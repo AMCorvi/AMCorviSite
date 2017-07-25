@@ -58,7 +58,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_hosts.middleware.HostsResponseMiddleware'
 ]
-
 ROOT_URLCONF = 'amcorvi_site.urls'
 ROOT_HOSTCONF = 'amcorvi_site.hosts'
 DEFAULT_HOST = 'www'
@@ -86,6 +85,12 @@ WSGI_APPLICATION = 'amcorvi_site.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
+
+   #   'default' : {
+   #     'ENGINE' : 'django_mongodb_engine',
+   #     'NAME' : 'my_database'
+   #  }
+
 # Google Database Configuration
 
      #  'default': {
@@ -93,7 +98,7 @@ DATABASES = {
      #         'HOST': '/cloudsql/<your-cloudsql-connection-string>',
      #         'NAME': 'postgres',
      #         'USER': 'postgres',
-     #         'PASSWORD': 'superomniaamanT*8',
+     #         'PASSWORD': os.environ["DBPASS"],
      #  }
 
 # PostgresSQL Docker configuration
@@ -101,7 +106,7 @@ DATABASES = {
      #      "ENGINE": "django.db.backends.postgresql_psycopg2",
      #      "NAME": "postgres",
      #      "USER": "postgres",
-     #      #  "PASSWORD": "superomniaamanT*8",
+     #      "PASSWORD": os.environ["DBPASS"],
      #      "HOST": "",
      #      "PORT": "5432",
      #  }
