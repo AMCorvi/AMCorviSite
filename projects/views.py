@@ -1,11 +1,17 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+
+from .models import Project
+
 
 # Create your views here.
 
 
-def index():
-    HttpResponse("This the the D3 project")
+class IndexView(generic.ListView):
+    context_object_name = 'projects_list'
 
-def d3():
-    return HttpResponse("This is the d3 project")
+    def get_queryset(self):
+        return Project.objects.all()
+
+class PostView(generic.DetailView):
+    model = Project
+

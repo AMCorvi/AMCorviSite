@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from mainsite.views import  index, about, Project_List_View
+from mainsite.views import  index, about
 
 urlpatterns = [
     url(r'^$', index, name="index"),
     url(r'^admin/', admin.site.urls),
-    url(r'^projects/$', Project_List_View.as_view(), name="projects"),
-    url(r'^about/$', about, name='view'),
-    url(r'^blog/', include('blog.urls'))
+    url(r'^projects/', include("projects.urls")),
+    url(r'^about/$', about, name="view"),
+    url(r'^blog/', include("blog.urls"))
 ]

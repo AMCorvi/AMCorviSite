@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainsite.apps.MainsiteConfig',
+    'projects.apps.ProjectsConfig',
     'blog.apps.BlogConfig',
     'django_hosts',
 ]

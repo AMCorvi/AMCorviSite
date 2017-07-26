@@ -13,12 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
-from projects import views
+from django.conf.urls import url
+from django.contrib import admin
+
+
+from .views import IndexView, PostView
 
 urlpatterns = [
-    url(r'^$', views.index, name="index"),
-    url(r'^d3$', views.d3, name="d3"),
+    url(r'^$', IndexView.as_view(), name="index"),
+#    url(r'^d_three$', views.d_three, name="d_three"),
 #    url(r'^ots$', views.on_the_scene, name="on_the_scene"),
 #    url(r'^$yeller$', views.yeller, name="yeller"),
 #    url(r'^nodetalk$', views.node_talk, name="node_talk"),
