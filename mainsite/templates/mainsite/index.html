@@ -7,6 +7,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="{% static 'mainsite/styles/smain.css'%}" />
+        {# <link rel="stylesheet" href="{% static 'mainsite/styles/supplement' %}"/> #}
 	</head>
 	<body>
 
@@ -65,7 +66,8 @@
 					<section id="cta" class="main special">
                    {% for project in projects %}
                         <h2>{{ project.project_name}} </h2>
-                        <p>{{project.description}}</p>
+                        <p class="projects">{{project.description}}</p>
+                        <br />
                         <h6>{{ project.technologies }}</h6>
 						<ul class="actions">
                             <li><a href="{{project.repo_url}}" class="button">View Source</a></li>
@@ -78,21 +80,25 @@
 
 					<section id="main" class="main">
 						<header>
-							<h2>Lorem ipsum dolor</h2>
+							<h2>Have a fortune cookie</h2>
 						</header>
-                        <p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit.
-                            In sed feugiat est, eu congue elit.
-                            Ut porta magna vel felis sodales vulputate.
-                            Donec faucibus dapibus lacus non ornare.
-                            Etiam eget neque id metus gravida tristique ac quis erat.
-                            Aenean quis aliquet sem. Ut ut elementum sem. Suspendisse eleifend ut est non dapibus.
-                            Nulla porta, neque quis pretium sagittis, tortor lacus elementum metus, in imperdiet ante
-                            lorem vitae ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                            ac turpis egestas. Etiam eget neque id metus gravida tristique ac quis erat. Aenean quis aliquet
-                            sem. Ut ut elementum sem. Suspendisse eleifend ut est non dapibus. Nulla porta, neque quis pretium
-                            sagittis, tortor lacus elementum metus, in imperdiet ante lorem vitae ipsum. Pellentesque habitant
-                            morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                        </p>
+                            <div class="fortune">
+                                <h3><span  class="fortuneTitle">Your Fortune</span>:</h3>
+                                <em>
+                                    <h5 id="fortuneMessage"></h5>
+                                </em>
+                                <hr />
+                                <h3><span class="fortuneTitle">Chinese Lesson</span>:</h3>
+                                <strong>
+                                    <h6>Phrase</h6>
+                                    <p id="english" class="fortunePhrase" ></p>
+                                </strong>
+                                    <h6>Phoneticized Translation</h6>
+                                    <p id="pronunciation" id="fortunePhrase"></p>
+                                <hr />
+                                    <h3><span class="fortuneTitle">Lucky Number</span>:</h3>
+                                    <p id="fortuneNumbers"></p>
+                            </div>
 					</section>
 
 
@@ -104,7 +110,7 @@
 							<li><a href="http://github.com/amcorvi" class="icon fa-github"><span class="label">Github</span></a></li>
 							<li><a href="http://linkedin.com/amcorvi" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
 						</ul>
-						<p class="copyright"><a href="http://twitter.com/amcorvi">&copy; AMCorvi. </a></p>
+						<p class="copyright"><a href="http://twitter.com/amcorvi"> &copy; AMCorvi. </a></p>
 					</footer>
 
 			</div>
@@ -114,6 +120,27 @@
             <script src="{% static 'mainsite/js/skel.min.js' %}"></script>
             <script src="{% static 'mainsite/js/util.js' %}"></script>
             <script src="{% static 'mainsite/js/main.js' %}"></script>
+            <script type="text/javascript">
+                 function reqListener () {
+                     var fortunes = JSON.parse(this.responseText);
+                     var cookie1 = fortunes[0];
+                     var cookie2 = fortunes[1];
+
+                     fortuneMessage.innerText = cookie1.fortune.message;
+                     fortuneNumbers.innerText = cookie1.lotto.numbers;
+                     english.innerText = cookie1.lesson.english;
+                     pronunciation.innerText = cookie1.lesson.pronunciation;
+
+                    console.log(fortunes);
+
+
+                }
+
+                var fortuneCookie = new XMLHttpRequest();
+                fortuneCookie.addEventListener("load", reqListener);
+                fortuneCookie.open("GET", "http://fortunecookieapi.herokuapp.com/v1/cookie?limit=2");
+                fortuneCookie.send();
+            </script>
 
 	</body>
 </html>

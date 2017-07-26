@@ -1556,3 +1556,19 @@
 
 		}
 
+/* supplementals  */
+p.projects {
+    margin: auto;
+    text-align: center;
+    width: 60%;
+}
+
+.fortune {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+
+.fortuneTitle {
+    text-decoration: underline;
+}
