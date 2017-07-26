@@ -38,7 +38,7 @@
 				<div class="inner">
 					<h1>Welcome Hope you learn something .</h1>
 					<ul class="actions">
-						<li><a href="#1" class="button alt scrolly big">Continue</a></li>
+                        <li><a href="#{{ blog_post_list | length  }}" class="button alt scrolly big">Continue</a></li>
 					</ul>
 				</div>
 			</section>
@@ -70,17 +70,17 @@
         {% endfor %}
 
 
-            
+
 		<!-- Footer -->
 
 			<footer id="footer">
 				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="http://github.com/amcorvi" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="mailto:am@corvi.co" class="icon fa-mail"><span class="label">Email</span></a></li>
+					<li><a href="http://twitter.com/amcorvi" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 				</ul>
 				<div class="copyright">
-					&copy; AMCorvi</a>.
+                    <a href="http://twitter.com/amcorvi"> &copy; AMCorvi</a>.
 				</div>
 			</footer>
 
@@ -98,10 +98,10 @@
                        text      = postContent.innerHTML,
                        html      = converter.makeHtml(text);
                    postContent.innerHTML = html;
-                       
+
                 })
-                        
-                
+
+
             </script>
 	</body>
 </html>

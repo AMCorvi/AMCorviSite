@@ -1572,3 +1572,7 @@ p.projects {
 .fortuneTitle {
     text-decoration: underline;
 }
+
+.CTA {
+    color: red;
+}

@@ -36,9 +36,9 @@
 					</section>
 
                 <a href='http://blog.corvi.co'>
-                    <h1 id="sectionTitle"> Dev Blogs </h1>
+                    <h1 id="sectionTitle"> Corvi Dev Blog </h1>
                 </a>
-				<!-- Items -->
+				<!-- Blogs -->
 					<section class="main items">
 
 
@@ -59,7 +59,7 @@
 
 				</section>
 
-				<!-- CTA -->
+				<!-- Projects -->
                 <a href='http://projects.corvi.co'>
                     <h1 id="sectionTitle"> Projects </h1>
                 </a>
@@ -76,11 +76,17 @@
                     {% endfor %}
 					</section>
 
-				<!-- Main -->
+				<!-- CTA -->
 
 					<section id="main" class="main">
 						<header>
-							<h2>Have a fortune cookie</h2>
+                            <h2 class="CTA">
+                                <marquee  id="marq" behavior="alternate" truespeed="800">
+                                😀 Thanks For Visiting.
+                                <br />
+                                Have a fortune cookie 😀
+                                </marquee>
+                            </h2>
 						</header>
                             <div class="fortune">
                                 <h3><span  class="fortuneTitle">Your Fortune</span>:</h3>
@@ -98,8 +104,8 @@
                                 <hr />
                                     <h3><span class="fortuneTitle">Lucky Number</span>:</h3>
                                     <p id="fortuneNumbers"></p>
+                            <span id="altFortune" class="button">Have A Look At My Cookie</span>
                             </div>
-                            <span id="altFortune" class="button">Try Your Friend's Cookie</span>
 					</section>
 
 
@@ -134,9 +140,7 @@
                 pronunciation.innerText = cookie1.lesson.pronunciation;
 
 
-                var isFirstCookie = fortuneMessage.innerText == cookie1.fortune.message
-                    ? true : false ;
-
+                var isFirstCookie = true ;
                 altFortune.addEventListener("click", function(e){
 
                         if (isFirstCookie === true ) {
@@ -157,7 +161,7 @@
                            pronunciation.innerText = cookie1.lesson.pronunciation;
 
                            isFirstCookie = true;
-                           e.toElement.innerText = "Check The Other Cookie Again" ;
+                           e.toElement.innerText = "Check My Cookie Again" ;
                         }
                  })
 
