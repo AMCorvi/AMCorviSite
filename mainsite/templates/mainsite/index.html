@@ -99,6 +99,7 @@
                                     <h3><span class="fortuneTitle">Lucky Number</span>:</h3>
                                     <p id="fortuneNumbers"></p>
                             </div>
+                            <span id="altFortune" class="button">Try Your Friend's Cookie</span>
 					</section>
 
 
@@ -121,25 +122,56 @@
             <script src="{% static 'mainsite/js/util.js' %}"></script>
             <script src="{% static 'mainsite/js/main.js' %}"></script>
             <script type="text/javascript">
-                 function reqListener () {
-                     var fortunes = JSON.parse(this.responseText);
-                     var cookie1 = fortunes[0];
-                     var cookie2 = fortunes[1];
+            function reqListener () {
 
-                     fortuneMessage.innerText = cookie1.fortune.message;
-                     fortuneNumbers.innerText = cookie1.lotto.numbers;
-                     english.innerText = cookie1.lesson.english;
-                     pronunciation.innerText = cookie1.lesson.pronunciation;
+                var fortunes = JSON.parse(this.responseText);
+                var cookie1 = fortunes[0];
+                var cookie2 = fortunes[1];
 
-                    console.log(fortunes);
+                fortuneMessage.innerText = cookie1.fortune.message;
+                fortuneNumbers.innerText = cookie1.lotto.numbers;
+                english.innerText = cookie1.lesson.english;
+                pronunciation.innerText = cookie1.lesson.pronunciation;
 
 
-                }
+                var isFirstCookie = fortuneMessage.innerText == cookie1.fortune.message
+                    ? true : false ;
 
-                var fortuneCookie = new XMLHttpRequest();
-                fortuneCookie.addEventListener("load", reqListener);
-                fortuneCookie.open("GET", "http://fortunecookieapi.herokuapp.com/v1/cookie?limit=2");
-                fortuneCookie.send();
+                altFortune.addEventListener("click", function(e){
+
+                        if (isFirstCookie === true ) {
+
+                           fortuneMessage.innerText = cookie2.fortune.message;
+                           fortuneNumbers.innerText = cookie2.lotto.numbers;
+                           english.innerText = cookie2.lesson.english;
+                           pronunciation.innerText = cookie2.lesson.pronunciation;
+
+                           isFirstCookie = false;
+                           e.toElement.innerText = "Check Your Cookie Again" ;
+                        } else {
+
+
+                           fortuneMessage.innerText = cookie1.fortune.message;
+                           fortuneNumbers.innerText = cookie1.lotto.numbers;
+                           english.innerText = cookie1.lesson.english;
+                           pronunciation.innerText = cookie1.lesson.pronunciation;
+
+                           isFirstCookie = true;
+                           e.toElement.innerText = "Check The Other Cookie Again" ;
+                        }
+                 })
+
+
+                console.log(fortunes);
+
+
+
+            }
+
+            var fortuneCookie = new XMLHttpRequest();
+            fortuneCookie.addEventListener("load", reqListener);
+            fortuneCookie.open("GET", "http://fortunecookieapi.herokuapp.com/v1/cookie?limit=2");
+            fortuneCookie.send();
             </script>
 
 	</body>
