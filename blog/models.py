@@ -13,7 +13,7 @@ class Blog(models.Model):
    author = models.CharField(max_length=20, blank=True)
    post_title = models.CharField(max_length=50)
    post_content = models.TextField()
-   date_create = models.DateTimeField('data published')
+   date_create = models.DateTimeField('date published')
    img_url = models.URLField(max_length=300, blank=True)
    tags = models.ManyToManyField(Tag)
 

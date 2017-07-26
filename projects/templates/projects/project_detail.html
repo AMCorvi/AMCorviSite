@@ -15,50 +15,27 @@
 
 
                 <!-- Menu -->
-                <div class="ui top inverted stackable menu">
+                <div id="menu" class="ui top inverted stackable menu">
                   <div class="item">
                       <a href="http://Corvi.co" class="ui item image">
                           <img src="{% static "projects/assets/images/corviPixel.png"%}">
                       </a>
                   </div>
-                  <a href="#" class="item active disable">Home</a>
+                  <a href="/" class="item">Home</a>
                   <a href="http://blog.corvi.co" class="item">Blog</a>
                   <a href="http://corvi.co/about" class="item">About</a>
+
                 </div>
 
-
-				<!-- Projects -->
-                    <h1 id="sectionTitle"> Projects </h1>
-					<section id="cta" class="main special">
-                   {% for project in projects_list %}
-                   <div class="projectContainer">
-
-                        <h2>{{ project.project_name}} </h2>
-                        <p class="projects">{{project.description}}</p>
-                        <br />
-                        <h6>{{ project.technologies }}</h6>
-						<ul class="actions">
-                            <li><a href="{{project.repo_url}}" class="button">View Source</a></li>
-
-                            {% comment %}
-                             Control flow to determine whether or not the project_url will be visible in
-                             an iframe element.
-                             if: An https url insert raw address into src
-                             else: insert relative address to source for project_detail page
-                            {% endcomment %}
-                            {% if project.is_https %}
-                            <li><a href="{{project.project_url}}" class="button">View Project</a></li>
-                            {% else %}
-                                <li><a href="{{project.pk}}" class="button">View Project</a></li>
-                            {% endif %}
-
-						</ul>
-
-                   </div>
-                    {% endfor %}
-					</section>
-
-
+                <iframe id="siteDisplay"
+                    title="{{project.project_name}}"
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    marginheight="0"
+                    marginwidth="0"
+                    src="{{ project.project_url}}">
+                </iframe>
 
 				<!-- Footer -->
 					<footer id="footer">
