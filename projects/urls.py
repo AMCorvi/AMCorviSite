@@ -17,10 +17,11 @@ from django.conf.urls import url
 from django.contrib import admin
 
 
-from .views import IndexView, PostView
+from .views import IndexView, ProjectView
 
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name="index"),
+    url(r'^(?P<pk>[0-9]+)/$', ProjectView.as_view(), name="project")
 #    url(r'^d_three$', views.d_three, name="d_three"),
 #    url(r'^ots$', views.on_the_scene, name="on_the_scene"),
 #    url(r'^$yeller$', views.yeller, name="yeller"),

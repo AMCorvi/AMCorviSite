@@ -6,37 +6,49 @@
 		<title>AMCorvi</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="{% static 'mainsite/styles/smain.css'%}" />
-        {# <link rel="stylesheet" href="{% static 'mainsite/styles/supplement' %}"/> #}
+        <link rel="stylesheet" href="{% static "mainsite/styles/smain.css"%}" />
+        <link rel="stylesheet" href="{% static "projects/styles/supplement.css"%}" />
+        <link rel="stylesheet" href="{% static "projects/assets/bower_components/semantic-ui-item/item.min.css" %}"/>
+        <link rel="stylesheet" href="{% static "projects/assets/bower_components/semantic-ui-menu/menu.min.css" %}"/>
 	</head>
 	<body>
 
 
                 <!-- Menu -->
-                <div class="ui top fixed menu">
+                <div class="ui top inverted stackable menu">
                   <div class="item">
-                      <img src="{% static 'project/assests/corvi.png'%}">
+                      <a href="http://Corvi.co" class="ui item image">
+                          <img src="{% static "projects/assets/images/corviPixel.png"%}">
+                      </a>
                   </div>
-                  <a class="item">Features</a>
-                  <a class="item">Testimonials</a>
-                  <a class="item">Sign-in</a>
+                  <a href="/" class="item">Home</a>
+                  <a href="http://blog.corvi.co" class="item">Blog</a>
+                  <a href="http://corvi.co/about" class="item">About</a>
                 </div>
 
 
 				<!-- Projects -->
-                <a href='http://projects.corvi.co'>
                     <h1 id="sectionTitle"> Projects </h1>
-                </a>
 					<section id="cta" class="main special">
                    {% for project in projects_list %}
+                   <div class="projectContainer">
+
                         <h2>{{ project.project_name}} </h2>
                         <p class="projects">{{project.description}}</p>
                         <br />
                         <h6>{{ project.technologies }}</h6>
 						<ul class="actions">
                             <li><a href="{{project.repo_url}}" class="button">View Source</a></li>
+
+                            {% if project.is_https %}
                             <li><a href="{{project.project_url}}" class="button">View Project</a></li>
+                            {% else %}
+                                <li><a href="{{project.pk}}" class="button">View Project</a></li>
+                            {% endif %}
+
 						</ul>
+
+                   </div>
                     {% endfor %}
 					</section>
 
@@ -45,9 +57,9 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="icons">
-							<li><a href="http://github.com/amcorvi" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="mailto:am@corvi.co" class="icon fa-envelope"><span class="label">Email</span></a></li>
 							<li><a href="http://twitter.com/amcorvi" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="mailto:am@corvi.co" class="icon fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="http://github.com/amcorvi" class="icon fa-github"><span class="label">Github</span></a></li>
 						</ul>
 						<p class="copyright"><a href="http://github.com/amcorvi"> &copy; AMCorvi. </a></p>
 					</footer>

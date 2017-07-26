@@ -22,6 +22,6 @@ urlpatterns = [
     url(r'^$', index, name="index"),
     url(r'^admin/', admin.site.urls),
     url(r'^projects/', include("projects.urls")),
-    url(r'^about/$', about, name="view"),
+    url(r'^about/$', about, name="about"),
     url(r'^blog/', include("blog.urls"))
 ]

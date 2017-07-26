@@ -12,6 +12,6 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Project.objects.all()
 
-class PostView(generic.DetailView):
+class ProjectView(generic.DetailView):
     model = Project
 
