@@ -2,8 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import generic
 
+from .models import Link
 from blog.models import Blog
-
 from projects.models import Project
 
 
@@ -18,7 +18,7 @@ def index(request):
     })
 
 def about(request):
-    return render(request, "mainsite/about.html", { 'projects': Project.objects.all()})
+    return render(request, "mainsite/about.html", { 'link': Link.objects.get(name="*")})
 
 class Project_List_View(generic.ListView):
     context_object_name = "portfolio_projects"

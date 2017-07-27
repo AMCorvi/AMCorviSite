@@ -23,11 +23,17 @@ h1#sectionTitle{
 
 
 #siteDisplay {
-    height: 85vh;
+    height: 95vh;
 }
 
 #menu {
    margin-bottom: 0px;
+   border-radius: 0px;
+   height: 30px;
+}
+#content {
+    color: black;
+    font-weight: bold;
 }
 
 /* Portrait and Landscape */

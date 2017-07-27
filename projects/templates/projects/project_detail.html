@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="{% static "projects/styles/supplement.css"%}" />
         <link rel="stylesheet" href="{% static "projects/assets/bower_components/semantic-ui-item/item.min.css" %}"/>
         <link rel="stylesheet" href="{% static "projects/assets/bower_components/semantic-ui-menu/menu.min.css" %}"/>
+        <link rel="stylesheet" href="{% static "projects/assets/bower_components/semantic-ui-transition/transition.min.css" %}"/>
+        <link rel="stylesheet" href="{% static "projects/assets/bower_components/semantic-ui-dimmer/dimmer.min.css" %}"/>
+        <link rel="stylesheet" href="{% static "projects/assets/bower_components/semantic-ui-modal/modal.min.css" %}"/>
 	</head>
 	<body>
 
@@ -25,7 +28,34 @@
                   <a href="http://blog.corvi.co" class="item">Blog</a>
                   <a href="http://corvi.co/about" class="item">About</a>
 
+
+                <div class="right menu">
+                    <a id="more"  class="ui item ">
+                      More Info
+                    </a>
+                    <a href="{{project.repo_url}}" class="ui item">
+                      Github Repo
+                    </a>
+                 </div>
+
                 </div>
+
+                <div id="modal" class="ui modal">
+                  <div class="ui icon header">
+                    <h2 id="modalHeader"> {{project.project_name}}</h2>
+                  </div>
+                  <div id="content" class="content">
+                      <p>{{project.description}}</p>
+                  </div>
+                  <div class="actions">
+                    <div id="redirect" class="ui red basic inverted button">
+                      <a href="{{project.project_url}}"> View Project Outside Frame <a>
+                    </div>
+                    <div id="ok" class="ui button">
+                      Got it!
+                    </div>
+                  </div>
+</div>
 
                 <iframe id="siteDisplay"
                     title="{{project.project_name}}"
@@ -54,6 +84,16 @@
             <script src="{% static 'mainsite/js/skel.min.js' %}"></script>
             <script src="{% static 'mainsite/js/util.js' %}"></script>
             <script src="{% static 'mainsite/js/main.js' %}"></script>
+            <script src="{% static "projects/assets/bower_components/semantic-ui-transition/transition.min.js" %}"></script>
+            <script src="{% static "projects/assets/bower_components/semantic-ui-dimmer/dimmer.min.js" %}"></script>
+            <script src="{% static "projects/assets/bower_components/semantic-ui-modal/modal.min.js" %}"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                     $('#more').click(function(){
+                        $('#modal').modal('show');
+                     });
+                });
+            </script>
 	</body>
 </html>
 
