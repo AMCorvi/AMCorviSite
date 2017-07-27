@@ -71,7 +71,19 @@
                         <h6>{{ project.technologies }}</h6>
 						<ul class="actions">
                             <li><a href="{{project.repo_url}}" class="button">View Source</a></li>
-                            <li><a href="{{project.project_url}}" class="button">View Project</a></li>
+
+                            {% comment %}
+                             Control flow to determine whether or not the project_url will be visible in
+                             an iframe element.
+                             if: An https url insert raw address into src
+                             else: insert relative address to source for project_detail page
+                            {% endcomment %}
+                            {% if project.is_https %}
+                                <li><a href="{{project.project_url}}" class="button">View Project</a></li>
+                            {% else %}
+                                <li><a href="http://projects.corvi.co/{{project.pk}}" class="button">View Project</a></li>
+                            {% endif %}
+
 						</ul>
                     {% endfor %}
 					</section>
