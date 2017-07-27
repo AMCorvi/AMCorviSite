@@ -18,7 +18,9 @@ def index(request):
     })
 
 def about(request):
-    return render(request, "mainsite/about.html", { 'link': Link.objects.get(name="*")})
+    resume = Link.objects.filter(name='*')
+    resume = resume[0]
+    return render(request, "mainsite/about.html", { 'link': resume})
 
 class Project_List_View(generic.ListView):
     context_object_name = "portfolio_projects"
