@@ -43,7 +43,7 @@
 				</div>
 			</section>
 
-		<!-- One -->
+		<!-- Posts -->
         {% for blog in blog_post_list %}
             <article id="{{blog.pk}}" class="post {% cycle 'style1' 'style1' 'style2' 'style2' 'style3' 'style3' %} {% cycle '' 'invert alt' %}">
 		        		<div class="image">
@@ -53,7 +53,7 @@
 		        			<div class="inner">
 		        				<header>
                                     <h2><a href="{{blog.pk}}">{{ blog.post_title }}</a></h2>
-                                    <p class="info">{{blog.date_create|timesince}} <a href="{{blog.pk}}">{{blog.author}}</a></p>
+                                    <p class="info">{{blog.date_created|timesince}} &nbsp <a href="{{blog.pk}}">{{blog.author}}</a></p>
 		        				</header>
                                 <p id="post_content"> {{ blog.post_content|linebreaks|truncatewords:"40"}}</p>
 		        				<ul class="actions">

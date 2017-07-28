@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+{% load hosts %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AMCorvi - About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'mainsite/styles/smain.css'%}" />
+    <style>
+        html{
+            background: black;
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            align-items: center;
+            background: url("{% static "mainsite/images/888.jpg" %}");
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0px;
+            padding: 0px;
+            color: white;
+        }
+            /* background: rgba(34, 34, 34, 0.83); */
+        #card {
+            border-radius: 5px;
+            background: rgba(34, 34, 34, 0.83);
+            width: 50%;
+            min-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 30px;
+        }
+
+        .greeting {
+            width: 80%;
+            {# text-align: center; #}
+        }
+
+        h2 {
+            border-bottom: 1px solid white;
+            padding-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        img {
+            background: black;
+            border-radius: 80px;
+            height: 80px;
+            width: 80px;
+            margin: 0px 0px 20px 0px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="card">
+        <img src="{% static 'mainsite/images/weMadeIt.jpg' %}" alt="">
+        <h2 class="name">Alistar Mazzella Corvi</h2>
+
+
+        <p class="greeting"> {{link.description}} </p>
+        {{link.name}}
+        <div class="contactBadges">
+
+            <ul class="icons">
+                <li><a href="mailto:am@corvi.co" class="icon fa-envelope"><span class=""> • Email</span></a></li>
+                <li><a href="http://github.com/amcorvi" class="icon fa-github"><span class=""> • Github</span></a></li>
+                <li><a href="http://corvi.co" class="icon fa-code"><span class=""> • Website</span></a></li>
+                <li><a href="{{link.url}}" class="icon fa-file-text"><span class=""> • Resume</span></a></li>
+                <li><a href="http://twitter.com/amcorvi" class="icon fa-twitter"><span class=""> • Twitter</span></a></li>
+            </ul>
+
+        </div>
+    </div>
+
+</body>
+</html>

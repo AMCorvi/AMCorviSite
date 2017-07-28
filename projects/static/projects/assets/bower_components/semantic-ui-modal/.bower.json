@@ -1,0 +1,40 @@
+{
+  "name": "semantic-ui-modal",
+  "description": "Modal - Semantic UI",
+  "homepage": "http://www.semantic-ui.com",
+  "author": {
+    "name": "Jack Lukic",
+    "web": "http://www.jacklukic.com"
+  },
+  "ignore": [
+    "docs",
+    "node",
+    "server",
+    "spec",
+    "src",
+    "test"
+  ],
+  "keywords": [
+    "semantic",
+    "ui",
+    "css3",
+    "framework"
+  ],
+  "license": [
+    "http://semantic-ui.mit-license.org/"
+  ],
+  "main": [
+    "modal.css"
+  ],
+  "version": "2.2.11",
+  "_release": "2.2.11",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.2.11",
+    "commit": "59518f4a5beacf92710ad1e25feea51d41534ee2"
+  },
+  "_source": "https://github.com/Semantic-Org/UI-Modal.git",
+  "_target": "^2.2.11",
+  "_originalSource": "semantic-ui-modal",
+  "_direct": true
+}

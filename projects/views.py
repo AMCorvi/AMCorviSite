@@ -7,10 +7,10 @@ from .models import Project
 
 
 class IndexView(generic.ListView):
-    context_object_name = 'projects_list'
+    context_object_name = "projects_list"
 
     def get_queryset(self):
-        return Project.objects.all()
+        return Project.objects.order_by("-date_published")
 
 class ProjectView(generic.DetailView):
     model = Project

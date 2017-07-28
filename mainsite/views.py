@@ -13,7 +13,7 @@ from projects.models import Project
 def index(request):
     return render(request, "mainsite/index.html",
     {
-    "blogs": Blog.objects.all().order_by("-date_create")[0:6]
+    "blogs": Blog.objects.all().order_by("-date_created")[0:6]
     , 'projects': Project.objects.all()
     })
 

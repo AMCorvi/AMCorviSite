@@ -1,0 +1,40 @@
+{
+  "name": "semantic-ui-item",
+  "description": "Item - Semantic UI",
+  "homepage": "http://www.semantic-ui.com",
+  "author": {
+    "name": "Jack Lukic",
+    "web": "http://www.jacklukic.com"
+  },
+  "ignore": [
+    "docs",
+    "node",
+    "server",
+    "spec",
+    "src",
+    "test"
+  ],
+  "keywords": [
+    "semantic",
+    "ui",
+    "css3",
+    "framework"
+  ],
+  "license": [
+    "http://semantic-ui.mit-license.org/"
+  ],
+  "main": [
+    "item.css"
+  ],
+  "version": "2.2.11",
+  "_release": "2.2.11",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.2.11",
+    "commit": "24e829634586025038b733c9eff42ad7486514c6"
+  },
+  "_source": "https://github.com/Semantic-Org/UI-Item.git",
+  "_target": "^2.2.11",
+  "_originalSource": "semantic-ui-item",
+  "_direct": true
+}

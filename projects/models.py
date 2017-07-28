@@ -1,5 +1,6 @@
-from django.db import models
 from datetime import datetime
+
+from django.db import models
 
 # Utilize the same tags structure as the Blog Model
 from blog.models import Tag
@@ -12,11 +13,11 @@ class Project(models.Model):
     img_url = models.URLField(max_length=100)
     repo_url = models.URLField(max_length=100)
     project_url = models.URLField(max_length=100)
-    attribution_date = models.DateTimeField(name='date published',  default=datetime.now())
+    date_published = models.DateTimeField(default=datetime.now())
 
     description = models.CharField(max_length=500)
     is_https = models.BooleanField(default=False)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True)
 
 
 
