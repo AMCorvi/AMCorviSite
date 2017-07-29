@@ -1,9 +1,8 @@
-from datetime import datetime
-
 from django.db import models
+from django.utils import timezone
 
 # Utilize the same tags structure as the Blog Model
-from blog.models import Tag
+# from blog.models import Tag
 
 
 #  Create your models here.
@@ -13,11 +12,11 @@ class Project(models.Model):
     img_url = models.URLField(max_length=100)
     repo_url = models.URLField(max_length=100)
     project_url = models.URLField(max_length=100)
-    date_published = models.DateTimeField(default=datetime.now())
+    date_published = models.DateTimeField(default=timezone.now)
 
     description = models.CharField(max_length=500)
     is_https = models.BooleanField(default=False)
-    tags = models.ManyToManyField(Tag, blank=True)
+    # tags = models.ManyToManyField(Tag, blank=True)
 
 
 

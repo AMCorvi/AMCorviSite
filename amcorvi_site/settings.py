@@ -25,10 +25,11 @@ SECRET_KEY = '=&g4()pu!$z@@b6cy1xmtck1@td1!_p(8w1s3r1v==t##n$48('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost',
-                 '127.0.0.1',
-                 'blog.corvi.dev',
-                 'projects.corvi.dev',
+ALLOWED_HOSTS = [#'localhost',
+                 # '127.0.0.1',
+                 # 'corvi.co',
+                 # 'blog.corvi.dev',
+                 # 'projects.corvi.dev',
                  '*' # TODO: Remove in production
                 ]
 
@@ -87,20 +88,6 @@ WSGI_APPLICATION = 'amcorvi_site.wsgi.application'
 
 DATABASES = {
 
-   #   'default' : {
-   #     'ENGINE' : 'django_mongodb_engine',
-   #     'NAME' : 'my_database'
-   #  }
-
-# Google Database Configuration
-
-     #  'default': {
-     #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-     #         'HOST': '/cloudsql/<your-cloudsql-connection-string>',
-     #         'NAME': 'postgres',
-     #         'USER': 'postgres',
-     #         'PASSWORD': os.environ["DBPASS"],
-     #  }
 
 # PostgresSQL Docker configuration
      #  "default": {
@@ -113,20 +100,20 @@ DATABASES = {
      #  }
 
 # PostgresSQL local development configuration
-     #  "default": {
-     #      "ENGINE": "django.db.backends.postgresql_psycopg2",
-     #      "NAME": "AMC",
-     #      "USER": "AMC",
-     #      "PASSWORD": "",
-     #      "HOST": "localhost",
-     #      "PORT": "",
-     #  }
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "amcorvi",
+        "USER": "AMC",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "",
+    }
 
 #  SQLite configuration
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 }
 
 
